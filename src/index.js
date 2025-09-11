@@ -2,7 +2,6 @@
 const buttonAddRandom = document.querySelector("#btn-add-random");
 const tableBody = document.querySelector("tbody#contacts");
 
-
 // ITERATION 0 | Example Row
 // Splice 1 element from the contacts array at the random index
 const randomIndex = Math.floor(Math.random() * contacts.length);
@@ -30,11 +29,11 @@ exampleRow.innerHTML = `
 exampleRow.querySelector(".btn-delete").addEventListener("click", () => {
   exampleRow.remove();
 });
-  exampleRow.querySelector(".btn-like").addEventListener("click", (e) => {
-    const btn = exampleRow.querySelector(".btn-like")
-    btn.classList.toggle("selected");
-    console.log("click");
-  });
+exampleRow.querySelector(".btn-like").addEventListener("click", (e) => {
+  const btn = exampleRow.querySelector(".btn-like");
+  btn.classList.toggle("selected");
+  console.log("click");
+});
 tableBody.appendChild(exampleRow);
 
 // ITERATION 1 - Display 3 contacts
@@ -64,16 +63,14 @@ threeContacts.forEach((contacto, i) => {
   expRow.querySelector(".btn-delete").addEventListener("click", () => {
     expRow.remove();
   });
-  
+
   // ITERATION 3 - Like Buttons
   expRow.querySelector(".btn-like").addEventListener("click", (e) => {
-    const btn = expRow.querySelector(".btn-like")
+    const btn = expRow.querySelector(".btn-like");
     btn.classList.toggle("selected");
     console.log("click");
   });
 
-  console.log(contacto);
-  console.log(i);
   tableBody.appendChild(expRow);
 });
 // Your code goes here ...
@@ -103,7 +100,18 @@ buttonAddRandom.addEventListener("click", () => {
       </button>
     </td>
   `;
-  console.log("---------------------");
-  tableBody.appendChild(row);
+  // ITERATION 2 - Delete Buttons
+    row.querySelector(".btn-delete").addEventListener("click", () => {
+    row.remove();
+  });
+
+  // ITERATION 3 - Like Buttons
+    row.querySelector(".btn-like").addEventListener("click", (e) => {
+    const btn = row.querySelector(".btn-like");
+    btn.classList.toggle("selected");
+
+   
+  });
+   tableBody.appendChild(row);
 });
 // Your code goes here ...
